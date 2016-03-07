@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADV_FE APP</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<div class="layout">
+    <div class="header">
+        <div class="app-logo">
+        </div>
+        <div class="app-text">Welcome
+        </div>
+        <div class="app-menu">
+            <div class="app-menu_user>">
+                vitaliy.isarev@ya.ru
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-header">
+            <div class="posts-search">
+                <input type="text" class="posts-search_input" />
+            </div>
+            <div class="posts-menu">
+                <div class="posts-menu_item">POPULAR</div>
+                <div class="posts-menu_item">My PHOTO</div>
+            </div>
+        </div>
+
+        <div class="main-post">
+            <!--<div class="main-post_image">
+
+            </div>
+            <div class="main-post_desc">
+
+            </div>
+            <div class="main-post-comments">
+            </div>-->
+        </div>
+        <div class="posts-container">
+            <div class="posts_list">
+            </div>
+            <div class="posts_nav">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+
+</div>
+
+<script type="text/x-handlebars-template" id="posts_list-template">
+    {{#each posts}}
+    {{> post-preview class="posts_post" }}
+    {{/each}}
+</script>
+
+<script type="text/x-handlebars-template" id="post-preview-template">
+    <div class="post-preview {{class}}" data-id="{{id}}">
+        <div class="post-preview_img-wrapper">
+                <img class="post-preview_img" src="{{imgUrl}}"></img>
+        </div>
+        <div class="post-preview_description">{{description}}</div>
+    </div>
+</script>
+
+
+<script type="text/x-handlebars-template" id="posts_nav-template">
+    <div class="posts_nav_item">
+        {{#nav count selected}}
+        <div data-id="{{number}}"
+             class="posts_nav_item {{#if selected}}posts_nav_item_selected{{/if}}">
+            {{number}}
+        </div>
+        {{/nav}}
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="main-post-template">
+    <div class="main-post_image">
+        <img class="main-post_img" src="{{post.imgUrl}}"></img>
+    </div>
+    <div class="main-post-desc"> src={{post.description}}</div>
+    <div class="main-post-comments">
+        <ul class="comments-list">
+            {{> comment}}
+        </ul>
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="comment-template">
+    {{#each comments}}
+        <li class="comment"><div class="comment-user">{{username}}:</div><div class="comment-text">{{text}}</div>
+            {{#if comments}}
+            <ul class="comments-list">
+                {{> comment}}
+            </ul>
+            {{/if}}
+        </li>
+    {{/each}}
+</script>
+
+<script src="/libs/jquery/dist/jquery.js"></script>
+<script src="/libs/handlebars/handlebars.js"></script>
+<script src="/data.js"></script>
+<script src="/posts.js"></script>
+</body>
+</html>

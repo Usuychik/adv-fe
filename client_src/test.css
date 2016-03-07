@@ -1,0 +1,11 @@
+.first_row{
+    padding: 6px;
+    background: darkgray;
+}
+
+.second_row{
+    padding: 6px;
+}
+.posts-table{
+    border: solid 1px darkgray;
+}

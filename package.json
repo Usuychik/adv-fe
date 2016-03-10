@@ -1,0 +1,46 @@
+{
+  "name": "adv-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-bower": "0.0.13",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-debug": "^2.1.2",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-if": "^2.0.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "lazypipe": "^1.0.1",
+    "run-sequence": "^1.1.5",
+    "yargs": "^4.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Usuychik/adv-fe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Usuychik/adv-fe/issues"
+  },
+  "homepage": "https://github.com/Usuychik/adv-fe#readme"
+}

@@ -41,8 +41,8 @@ gulp.task('css',['css_conc'], function () {
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(autoprefixer())
-        .pipe(gulpif(argv.prod, minifyCss()))
-        .pipe(sourcemaps.write('/'))
+        .pipe(minifyCss())
+        .pipe(gulpif(argv.prod,sourcemaps.write('/')))
         .pipe(gulp.dest(destDir+'/static'))
 });
 
@@ -79,13 +79,11 @@ gulp.task('htmlhint', function () {
 });
 
 gulp.task('js', function () {
-    var uglifyJSChannel = lazypipe()
-        .pipe(sourcemaps.init)
-        .pipe(uglify)
-        .pipe(sourcemaps.write, "/");
     return gulp.src(srcDir+"/js/**/*.js")
         .pipe(concat("script.js"))
-        .pipe(gulpif(argv.prod,uglifyJSChannel()))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(gulpif(argv.prod,sourcemaps.write("/")))
         .pipe(gulp.dest(destDir+"/js"))
         .pipe(livereload());
 });
